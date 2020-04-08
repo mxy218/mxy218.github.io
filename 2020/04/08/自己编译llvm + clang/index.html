@@ -49,7 +49,7 @@
     
     <title>
         
-            Android编译启用ccache | 暮萧雨的笔记
+            自己编译llvm + clang | 暮萧雨的笔记
         
     </title>
     
@@ -199,19 +199,19 @@
     
     
       <div class="post-header"> 
-  <a class="post-header-title" href="/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/">Android编译启用ccache</a>
+  <a class="post-header-title" href="/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/">自己编译llvm + clang</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-04-07
+      发布于:&nbsp;2020-04-08
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-04-07
+      更新于:&nbsp;2020-04-08
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E5%AE%89%E5%8D%93/">安卓</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/Linux/">Linux</a>
     </span>
     
       <span>
@@ -233,25 +233,25 @@
       <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
       <ul class="mdui-menu" id="share_menu">
         <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share/share.php?appkey=&title=Android编译启用ccache&url=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/&pic=http://yoursite.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=自己编译llvm + clang&url=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/&pic=http://yoursite.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=Android编译启用ccache&url=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/&via=暮萧雨" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+          <a href="https://twitter.com/intent/tweet?text=自己编译llvm + clang&url=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/&via=暮萧雨" target="_blank" class="mdui-ripple">分享到 Twitter</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+          <a href="https://plus.google.com/share?url=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/" target="_blank" class="mdui-ripple">分享到 Google+</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/&title=Android编译启用ccache" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/&title=自己编译llvm + clang" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=暮萧雨的笔记&title=Android编译启用ccache&summary=&pics=http://yoursite.com/null&url=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=暮萧雨的笔记&title=自己编译llvm + clang&summary=&pics=http://yoursite.com/null&url=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/" target="_blank" class="mdui-ripple">分享到 QQ</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://telegram.me/share/url?url=http://yoursite.com/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/&text=Android编译启用ccache" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+          <a href="https://telegram.me/share/url?url=http://yoursite.com/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/&text=自己编译llvm + clang" target="_blank" class="mdui-ripple">分享到 Telegram</a>
         </li>
       </ul>
     
@@ -271,10 +271,15 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h1 id="编译Android系统时启用ccache可以加快二次构建的速度"><a href="#编译Android系统时启用ccache可以加快二次构建的速度" class="headerlink" title="编译Android系统时启用ccache可以加快二次构建的速度"></a>编译Android系统时启用ccache可以加快二次构建的速度</h1><h2 id="Ubuntu发行版："><a href="#Ubuntu发行版：" class="headerlink" title="Ubuntu发行版："></a>Ubuntu发行版：</h2><p>添加以下环境变量</p>
-<pre><code>export USE_CCACHE=1
-export CCACHE_LOGFILE=/home/你的用户名/.ccache
-export CCACHE_EXEC=/usr/bin/ccache</code></pre><p>或写入到.bashrc文件</p>
+    <h1 id="手机电脑都可以编译运行clang"><a href="#手机电脑都可以编译运行clang" class="headerlink" title="手机电脑都可以编译运行clang"></a>手机电脑都可以编译运行clang</h1><h2 id="这里以安卓-debian-stable-环境测试"><a href="#这里以安卓-debian-stable-环境测试" class="headerlink" title="这里以安卓 debian stable 环境测试"></a>这里以安卓 debian stable 环境测试</h2><p>基本环境安装</p>
+<pre><code>sudo apt-get install cmake gcc python make git curl</code></pre><p>拉取clang源码 (目前是clang-11)</p>
+<pre><code>git clone https://github.com/llvm/llvm-project.git llvm</code></pre><p>在源码下创建build目录</p>
+<pre><code>mkdir llvm/build
+cd llvm/build</code></pre><p>配置编译选项 ( -DLLVM_ENABLE_PROJECTS=’…’ )可添加需要的模块，包括clang, clang-tools-extra, libcxx, libcxxabi, libunwind, lldb, compiler-rt, lld, polly, or debuginfo-tests.</p>
+<pre><code>cmake -G &quot;Unix Makefiles&quot; -DLLVM_ENABLE_ASSERTIONS=On -DLLVM_ENABLE_PROJECTS=&apos;clang&apos; -DCMAKE_BUILD_TYPE=Release ../llvm</code></pre><p>开始编译</p>
+<pre><code>make -j4</code></pre><p>经过漫长的等待后编译完成后就可以安装使用啦</p>
+<pre><code>make install</code></pre><p>查看clang版本</p>
+<pre><code>clang -v</code></pre><p><img src="http://imxy.top:8088/clang-view.jpg" alt="RUNOOB 图标"><br>成功。</p>
 
   </div>
   <!--文末结束语-->
@@ -287,11 +292,11 @@ export CCACHE_EXEC=/usr/bin/ccache</code></pre><p>或写入到.bashrc文件</p>
   
   <nav>
     
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/">
-        <i class="iconfont icon-angle-left"></i>
-        <span>自己编译llvm + clang</span>
-      </a>
     
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/">
+        <span>Android编译启用ccache</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
     
   </nav>
 </article>
@@ -303,8 +308,8 @@ export CCACHE_EXEC=/usr/bin/ccache</code></pre><p>或写入到.bashrc文件</p>
     <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
-        <a href="/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#编译Android系统时启用ccache可以加快二次构建的速度"><span class="toc-number">1.</span> <span class="toc-text">编译Android系统时启用ccache可以加快二次构建的速度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu发行版："><span class="toc-number">1.1.</span> <span class="toc-text">Ubuntu发行版：</span></a></li></ol></li></ol>
+        <a href="/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#手机电脑都可以编译运行clang"><span class="toc-number">1.</span> <span class="toc-text">手机电脑都可以编译运行clang</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#这里以安卓-debian-stable-环境测试"><span class="toc-number">1.1.</span> <span class="toc-text">这里以安卓 debian stable 环境测试</span></a></li></ol></li></ol>
       </li>
     </ul>
   </div>
