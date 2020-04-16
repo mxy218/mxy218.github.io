@@ -42,70 +42,14 @@
 
 
 
-    
-        <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        
-            load: ['[tex]/mhchem'],
-        
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        
-            packages: {'[+]': ['mhchem']},
-        
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
           
 
 
     
     
     <title>
-          
-            暮萧雨的笔记
+        
+            java以root权限执行的坑 | 暮萧雨的笔记
         
     </title>
     
@@ -250,11 +194,11 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
     
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
+    
+      <div class="post-header"> 
   <a class="post-header-title" href="/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/">java以root权限执行的坑</a>
   <div class="post-header-meta">
     <span>
@@ -270,14 +214,53 @@
       分类于:&nbsp;<a class="category-link" href="/categories/JAVA/">JAVA</a>
     </span>
     
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
   </div>
 </div>   
     
 
 
 
-      
-      
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=java以root权限执行的坑&url=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/&pic=http://yoursite.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=java以root权限执行的坑&url=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/&via=暮萧雨" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/&title=java以root权限执行的坑" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=暮萧雨的笔记&title=java以root权限执行的坑&summary=&pics=http://yoursite.com/null&url=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://yoursite.com/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/&text=java以root权限执行的坑" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
@@ -286,117 +269,79 @@
     
   </div>
 
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <h2 id=...
-          
-          </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/">阅读更多</a>
-        </div>
-      </div>
-    </article>
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="😭😭😭不带这么坑的"><a href="#😭😭😭不带这么坑的" class="headerlink" title="😭😭😭不带这么坑的"></a>😭😭😭不带这么坑的</h2><h1 id="process的输入流要在输出流写完命令以后才能获取。-否则process流会被关闭"><a href="#process的输入流要在输出流写完命令以后才能获取。-否则process流会被关闭" class="headerlink" title="process的输入流要在输出流写完命令以后才能获取。 否则process流会被关闭"></a>process的输入流要在输出流写完命令以后才能获取。 否则process流会被关闭</h1><pre><code>import java.util.*;
+import java.io.*;
 
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/">自己编译llvm + clang</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-04-08
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-04-08
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Linux/">Linux</a>
-    </span>
-    
+public class Main
+{
+    public static void main(String[] args) throws Exception
+    {
+          callShell();
+    }
+
+    public static void callShell() throws Exception
+    {
+        String cmd;
+        String line = &quot;&quot;;
+        DataOutputStream os = null;
+        BufferedReader input = null;
+        Process process;
+
+        while (true)
+        {
+            process = Runtime.getRuntime().exec(&quot;su&quot;);
+            os = new DataOutputStream(process.getOutputStream());
+            cmd =  new Scanner(System.in).nextLine();
+            if (cmd != null)
+            {
+                os.write(cmd.getBytes());
+                os.writeBytes(&quot;\n&quot;);
+                os.flush();
+                os.writeBytes(&quot;exit\n&quot;);
+                os.flush();
+            }
+            input = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            while ((line = input.readLine()) != null)
+            {
+                System.out.println(line);
+            }
+        }
+    }
+}</code></pre>
   </div>
-</div>   
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 没有啦~ --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
     
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/">
+        <span>自己编译llvm + clang</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
 
 
 
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%BC%96%E8%AF%91/ >编译</a>
-      </i>
-    
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/04/16/java%E4%BB%A5root%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%9A%84%E5%9D%91/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#😭😭😭不带这么坑的"><span class="toc-number">1.</span> <span class="toc-text">😭😭😭不带这么坑的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#process的输入流要在输出流写完命令以后才能获取。-否则process流会被关闭"><span class="toc-number"></span> <span class="toc-text">process的输入流要在输出流写完命令以后才能获取。 否则process流会被关闭</span></a>
+      </li>
+    </ul>
   </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <h1 id=...
-          
-          </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/04/08/%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91llvm%20+%20clang/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/">Android编译启用ccache</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-04-07
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-04-07
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E5%AE%89%E5%8D%93/">安卓</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%BC%96%E8%AF%91/ >编译</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <h1 id=...
-          
-          </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/04/07/Android%E7%BC%96%E8%AF%91%E5%90%AF%E7%94%A8ccache/">阅读更多</a>
-        </div>
-      </div>
-    </article>
 
 
 
@@ -441,6 +386,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 
